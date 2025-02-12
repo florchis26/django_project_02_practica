@@ -1,0 +1,23 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/booklist.css' %}">
+
+<h1>Lista de libros</h1>
+
+{% for book in books_list %}
+
+
+<ul>
+
+    <li>{{book.title}}</li>
+    <li>{{book.body}}</li>
+    <li>Author: {{book.author}}</li>
+    <li>Pages: {{book.pages}}</li>
+    <li>Year: {{book.year}}</li>
+</ul>
+
+{% empty %}
+
+<h3>No has agregado ningún libro</h3>
+
+{% endfor %}
